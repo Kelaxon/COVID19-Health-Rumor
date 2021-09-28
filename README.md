@@ -2,15 +2,15 @@
 
 This repository contains annotated data associated with the ICWSM 2022 paper:
 
-W. Yang, S. Wang, Z. Peng, C. Shi, X. Ma, D. Yang.  *Know it to Defeat it: Exploring Health Rumor Characteristics and Debunking Efforts on Chinese Social Media during COVID-19 Crisis.* International AAAI Conference on Web and Social Media (ICWSM). 2022. [[Preprinted pdf]()]
+W. Yang, S. Wang, Z. Peng, C. Shi, X. Ma, D. Yang.  *Know it to Defeat it: Exploring Health Rumor Characteristics and Debunking Efforts on Chinese Social Media during COVID-19 Crisis.* International AAAI Conference on Web and Social Media (ICWSM). 2022. [[Preprinted pdf](https://arxiv.org/abs/2109.12372)]
 
-This dataset consists of **health rumors** circulated on China's internet during early COVID-19, as well as posts on [Sina Weibo](weibo.com) (China's largest microblogging website) intended to refute or **debunk** these rumors. Unlike conspiracy theories, health rumors are about healthcare and medicine and do not involve a primary actor (e.g., the U.S. military). In our paper, we categorize health rumors into two categories: **wish** (which inspires hope) and **dread** (which causes fear). We examine their content and propagation characteristics, as well as the efforts from different groups of users to debunk them. 
+This dataset consists of **health rumors** circulated on China's internet during early COVID-19, as well as posts on [Sina Weibo](https://weibo.com) (China's largest microblogging website) intended to refute or **debunk** these rumors. Unlike conspiracy theories, health rumors are about healthcare and medicine and do not involve a primary actor (e.g., the U.S. military). In our paper, we categorize health rumors into two categories: **wish** (which inspires hope) and **dread** (which causes fear). We examine their content and propagation characteristics, as well as the efforts from different groups of users to debunk them. 
 
 
 
 ### Data Format
 
- `data/health_rumors.csv` contains 408 health rumors that we manually identified as having appeared on China's Internet during the early four months of COVID-19 crisis.
+`data/health_rumors.csv` contains 408 health rumors that we manually identified as having appeared on China's Internet during the early four months of COVID-19 crisis.
 
 * `rumor_id`: unique identifier for the health rumor;
 * `publish_date`: published date of the fact-checking article;
@@ -20,8 +20,7 @@ This dataset consists of **health rumors** circulated on China's internet during
 * `search_expression`: query string we used to retrieve Weibo posts related to the health rumor from a large dataset;
 * `source`: source cited in the fact-checking article;
 * `article_url`: url of the article.
-
-Sample:
+* Sample:
 
 ```
 rumor_id,publish_date,rumor_type,article_title,article_content,search_expression,source,article_url
@@ -32,7 +31,7 @@ rumor_id,publish_date,rumor_type,article_title,article_content,search_expression
 
 `data/debunking_posts.csv` contains 238,554 debunking posts published on Weibo between January and May 2020. Some of the posts debunked multiple rumors at once.
 
-Sample:
+* Sample:
 
 ```
 url,rumor_id,rumor_type
@@ -69,7 +68,7 @@ A total of 408 health rumors were manually filtered from these fact-checking art
 
 2. We then filtered posts related to these health rumors from a large Weibo dataset based on the following process. Please see the paper for details.
 
-<img src="pic/annotationProcess.png" alt="annotationProcess" style="zoom: 33%;" />
+<img src="pic/annotationProcess.png" alt="annotationProcess" width="500" />
 
 3. Lastly, we use regular expressions (`utils/regular_expression.txt`) to identify debunking posts that express denials to health rumors and manually filter them for several rounds to ensure precision. A total of 238,554 (201,491 unique) debunking posts were identified.
 
@@ -80,6 +79,13 @@ A total of 408 health rumors were manually filtered from these fact-checking art
 If you are using the dataset or the search schemes, please cite the following in your work:
 
 ```
-TODO
+@misc{yang2021know,
+      title={Know it to Defeat it: Exploring Health Rumor Characteristics and Debunking Efforts on Chinese Social Media during COVID-19 Crisis}, 
+      author={Wenjie Yang and Sitong Wang and Zhenhui Peng and Chuhan Shi and Xiaojuan Ma and Diyi Yang},
+      year={2021},
+      eprint={2109.12372},
+      archivePrefix={arXiv},
+      primaryClass={cs.SI}
+}
 ```
 
